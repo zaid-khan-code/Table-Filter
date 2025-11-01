@@ -5,41 +5,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Table Filter</title>
+
+    <link rel="icon" type="image/svg+xml" href="./Assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="./Assets/favicon/favicon-16x16.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="./Assets/favicon/favicon-32x32.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/favicon/apple-touch-icon.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="192x192" href="./Assets/favicon/android-chrome-192x192.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="512x512" href="./Assets/favicon/android-chrome-512x512.svg" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#ec4899" />
+    <meta name="msapplication-TileColor" content="#ec4899" />
+    <link rel="mask-icon" href="favicon.svg" color="#ec4899" />
     <style>
         * {
             margin: 0;
             padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+                sans-serif;
             box-sizing: border-box;
         }
     </style>
-        <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-[#ffe4f1] min-h-screen">
-    <div class="flex items-center text-[34px] p-[0px] mt-10 justify-center ">
+    <div class="flex items-center text-[34px] p-[0px] mt-10 justify-center">
         <h1
             class="text-[36px] font-bold bg-gradient-to-r from-[#ec4899] via-[#f472b6] to-[#a855f7] text-transparent bg-clip-text">
-            Table Filter</h1>
+            Table Filter
+        </h1>
     </div>
     <div
-        class="container flex   justify-center gap-[10px] mb-[10px]  min-w-[100%] max-w-[1200px] w-[100%] ml-[auto] mr-[auto] flex-wrap  items-center mt-10">
-        <div class="child child1 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">All</div>
-        <div class="child child2 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Cars</div>
-        <div class="child child3 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Planes</div>
-        <div class="child child4 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Bikes</div>
-        <div class="child child5 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Boats</div>
-        <div class="child child6 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Trains</div>
-        <div class="child child7 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Trucks</div>
-        <div class="child child8 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Motorcycles</div>
-        <div class="child child9 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">RVs</div>
-        <div class="child child10 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Buses</div>
-        <div class="child child11 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Scooters</div>
-        <div class="child child12 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Helicopters</div>
+        class="container flex justify-center gap-[10px] mb-[10px] min-w-[100%] max-w-[1200px] w-[100%] ml-[auto] mr-[auto] flex-wrap items-center mt-10">
+        <div onclick="filterItems('all')" class="child child1 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">
+            All
+        </div>
+        <div onclick="filterItems('car')" class="child child2 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">
+            Cars</div>
+        <div onclick="filterItems('plane')" class="child child3 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">
+            Planes</div>
+        <div onclick="filterItems('bike')" class="child child4 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">
+            Bikes</div>
+        <div onclick="filterItems('boat')" class="child child5 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">
+            Boats</div>
+        <div onclick="filterItems('train')" class="child child6 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">
+            Trains</div>
+        <div onclick="filterItems('truck')" class="child child7 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">
+            Trucks</div>
+        <div onclick="filterItems('motorcycle')" class="child child8 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Motorcycles</div>
+        <div onclick="filterItems('rv')" class="child child9 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">RVs
+        </div>
+        <div onclick="filterItems('bus')" class="child child10 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">
+            Buses</div>
+        <div onclick="filterItems('scooter')"
+            class="child child11 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Scooters</div>
+        <div onclick="filterItems('helicopter')"
+            class="child child12 py-[5px] px-[10px] cursor-pointer rounded bg-[#f5a6d6]">Helicopters</div>
     </div>
 
     <div
-        class="itemsFilter flex gap-[10px] justify-center min-w-[100%] max-w-[1200px] ml-[auto] mr-[auto] flex-wrap  items-center mt-10">
+        class="itemsFilter flex gap-[10px] justify-center min-w-[100%] max-w-[1200px] ml-[auto] mr-[auto] flex-wrap items-center mt-10">
     </div>
     <script src="./app.js"></script>
 </body>
